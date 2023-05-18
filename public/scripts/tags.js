@@ -18,9 +18,9 @@ const TAG_LOGIC_AND = true; // switch to false to use OR logic for combining tag
 const CHARACTER_SELECTOR = '#rm_print_characters_block > div';
 
 const ACTIONABLE_TAGS = {
-    VIEW: { id: 2, name: 'Manage tags', color: 'rgba(150, 100, 100, 0.5)', action: onViewTagsListClick, icon: 'fa-solid fa-tags' },
-    FAV: { id: 1, name: 'Show only favorites', color: 'rgba(255, 255, 0, 0.5)', action: applyFavFilter, icon: 'fa-solid fa-star' },
-    GROUP: { id: 0, name: 'Show only groups', color: 'rgba(100, 100, 100, 0.5)', action: filterByGroups, icon: 'fa-solid fa-users' },
+    VIEW: { id: 2, name: '管理标签', color: 'rgba(150, 100, 100, 0.5)', action: onViewTagsListClick, icon: 'fa-solid fa-tags' },
+    FAV: { id: 1, name: '仅展示收藏', color: 'rgba(255, 255, 0, 0.5)', action: applyFavFilter, icon: 'fa-solid fa-star' },
+    GROUP: { id: 0, name: '仅展示组', color: 'rgba(100, 100, 100, 0.5)', action: filterByGroups, icon: 'fa-solid fa-users' },
 }
 
 const DEFAULT_TAGS = [
@@ -357,8 +357,8 @@ function onViewTagsListClick() {
     $('#dialogue_popup').addClass('large_dialogue_popup');
     const list = document.createElement('div');
     const everything = Object.values(tag_map).flat();
-    $(list).append('<h3>Tags</h3><i>Click on the tag name to edit it.</i><br>');
-    $(list).append('<i>Click on color box to assign new color.</i><br><br>');
+    $(list).append('<h3>标签</h3><i>点击标签名以编辑.</i><br>');
+    $(list).append('<i>点击颜色框更改颜色.</i><br><br>');
 
     for (const tag of tags) {
         const count = everything.filter(x => x == tag.id).length;

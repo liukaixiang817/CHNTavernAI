@@ -93,25 +93,25 @@ $(document).ready(function () {
         <div class="background_settings">
             <div class="inline-drawer">
                 <div class="inline-drawer-toggle inline-drawer-header">
-                    <b>Character Backgrounds</b>
+                    <b>角色背景</b>
                     <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
                 </div>
                 <div class="inline-drawer-content">
                     <div class="background_controls">
                         <div id="lock_background" class="menu_button">
                             <i class="fa-solid fa-lock"></i>
-                            Lock
+                            锁定
                         </div>
                         <div id="unlock_background" class="menu_button">
                             <i class="fa-solid fa-unlock"></i>
-                            Unlock
+                            解锁
                         </div>
                         <small>
-                            Press "Lock" to assign a currently selected background to a character or group chat.<br>
-                            Any background image selected while lock is engaged will be saved automatically.
+                            点击"锁定"将当前选择的背景分配给角色或群聊。.<br>
+                            在锁定状态下选择的任何背景图片都将自动保存。.
                         </small>
                     </div>
-                    <div>Preview</div>
+                    <div>预览</div>
                     <div id="custom_bg_preview">
                     </div>
                 </div>

@@ -1026,7 +1026,7 @@ function addCopyToCodeBlocks(messageElement) {
         if (navigator.clipboard !== undefined) {
             const copyButton = document.createElement('i');
             copyButton.classList.add('fa-solid', 'fa-copy', 'code-copy');
-            copyButton.title = 'Copy code';
+            copyButton.title = '复制代码';
             codeBlocks.get(i).appendChild(copyButton);
             copyButton.addEventListener('pointerup', function (event) {
                 navigator.clipboard.writeText(codeBlocks.get(i).innerText);
