@@ -2412,7 +2412,7 @@ async function Generate(type, { automatic_trigger, force_name2, resolve, reject,
         if (this_chid === undefined || this_chid === 'invalid-safety-id') {
             //send ch sel
             popup_type = 'char_not_selected';
-            callPopup('<h3>Сharacter is not selected</h3>');
+            callPopup('<h3>未选中角色</h3>');
         }
         is_send_press = false;
     }
