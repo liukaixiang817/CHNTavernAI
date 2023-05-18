@@ -16,8 +16,9 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
+const proxy = "socks5://127.0.0.1:7890";
 const WebSocket = require('ws');
 const axios = require('axios');
 const fs = require('fs');
@@ -244,7 +245,7 @@ class Client {
     gql_recv_url = "https://poe.com/api/receive_POST";
     home_url = "https://poe.com";
     settings_url = "https://poe.com/api/settings";
-
+    proxy = "socks5://127.0.0.1:7890";
     formkey = "";
     next_data = {};
     bots = {};
