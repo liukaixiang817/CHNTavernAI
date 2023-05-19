@@ -18,7 +18,7 @@ const nai_settings = {
 };
 
 const nai_tiers = {
-    0: 'Paper',
+    0: '工作簿已连接，仅可使用Euterpe模式',
     1: 'Tablet',
     2: 'Scroll',
     3: 'Opus',
