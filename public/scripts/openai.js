@@ -781,7 +781,7 @@ async function getStatusOpen() {
             contentType: "application/json",
             success: function (data) {
                 if (!('error' in data))
-                    setOnlineStatus('Valid');
+                    setOnlineStatus('已连接');
                 resultCheckStatusOpen();
             },
             error: function (jqXHR, exception) {

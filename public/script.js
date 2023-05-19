@@ -296,7 +296,7 @@ const system_messages = {
         is_name: true,
         mes: [
             '<h2>欢迎来到 lkxTavernAI!</h2>',
-            '<h3>当前Web版本 2.0; 后端版本:1.5.3</h3>',
+            '<h3>当前Web版本 3.0; 后端版本:1.5.3</h3>',
             /*"Read the <a href='/notes/update.html' target='_blank'>instructions here</a>. Also located in your installation's base folder"*/,
             '<hr class="sysHR">',
             '<h3>为了开始聊天，请先在底部检查AI状态。若未连接:</h3>',
@@ -318,7 +318,8 @@ const system_messages = {
             '<h3>更新信息:</h3>',
             '<ol>',
             '<li>少量的汉化修复</li>',
-            '<li>poe过期日期：2023.6.9；更新时间:2023.5.18</li>',
+            '<li>添加新模型</li>',
+            '<li>poe过期日期：2023.6.9；更新时间:2023.5.19</li>',
             '</ol>',
             '<hr class="sysHR">',
             '<h3>注意：</h3>',
@@ -5734,7 +5735,7 @@ $(document).ready(function () {
                         names.push(data.file_name);
                         let nameString = DOMPurify.sanitize(names.join(', '));
                         await getCharacters();
-                        select_rm_info(`Character imported<br><h4>${nameString}</h4>`, oldSelectedChar);
+                        select_rm_info(`角色已导入<br><h4>${nameString}</h4>`, oldSelectedChar);
                         $("#rm_info_block").transition({ opacity: 1, duration: 1000 });
                     }
                 },
