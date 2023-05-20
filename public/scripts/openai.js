@@ -555,13 +555,19 @@ async function sendOpenAIRequest(type, openai_msgs_tosend, signal) {
             const decoder = new TextDecoder();
             const reader = response.body.getReader();
             let getMessage = "";
+            let messageBuffer = "";
             while (true) {
                 const { done, value } = await reader.read();
                 let response = decoder.decode(value);
 
                 tryParseStreamingError(response);
 
-                let eventList = response.split("\n");
+                // ReadableStream's buffer is not guaranteed to contain full SSE messages as they arrive in chunks
+                // We need to buffer chunks until we have one or more full messages (separated by double newlines)
+                messageBuffer += response;
+                let eventList = messageBuffer.split("\n\n");
+                // Last element will be an empty string or a leftover partial message
+                messageBuffer = eventList.pop();
 
                 for (let event of eventList) {
                     if (!event.startsWith("data"))
@@ -692,8 +698,8 @@ function loadOpenAISettings(data, settings) {
     oai_settings.freq_pen_openai = settings.freq_pen_openai ?? default_settings.freq_pen_openai;
     oai_settings.pres_pen_openai = settings.pres_pen_openai ?? default_settings.pres_pen_openai;
     oai_settings.top_p_openai = settings.top_p_openai ?? default_settings.top_p_openai;
-    oai_settings.stream_openai = true;
-    //oai_settings.stream_openai = settings.stream_openai ?? default_settings.stream_openai;
+    //oai_settings.stream_openai = true;
+    oai_settings.stream_openai = settings.stream_openai ?? default_settings.stream_openai;
     oai_settings.openai_max_context = settings.openai_max_context ?? default_settings.openai_max_context;
     oai_settings.openai_max_tokens = settings.openai_max_tokens ?? default_settings.openai_max_tokens;
     oai_settings.bias_preset_selected = settings.bias_preset_selected ?? default_settings.bias_preset_selected;
